@@ -2,8 +2,19 @@
 
 var socket = io();
 
-socket.on('example, function(arg1, arg2){
-  telegraph(arg1, arg2);
+socket.on('telegraph', function(arg1){
+  telegraph(arg1);
 
 
+  };
+  
+  socket.on('beginEnd'), function(yesNo){
+    if(yesNo == 1){
+      beginPiece();
+      
+    };
+    if(yesNo == 0){
+      endPiece();
+    
+    };
   };

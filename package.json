@@ -1,0 +1,11 @@
+{
+  "name": "socketMusicBoiler",
+  "description": "boilerplate for an immersive node.js musical experience",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.6",
+    "node-osc": "^0.3.0",
+    "socket.io": "^1.2.1"
+  },
+  "private": true
+}

@@ -6,9 +6,9 @@ socket.on('telegraph', function(arg1){
   telegraph(arg1);
 
 
-  };
+  });
   
-  socket.on('beginEnd'), function(yesNo){
+  socket.on('beginEnd', function(yesNo){
     if(yesNo == 1){
       beginPiece();
       
@@ -17,4 +17,10 @@ socket.on('telegraph', function(arg1){
       endPiece();
     
     };
-  };
+  });
+
+socket.on('bufChopper', function(arg1){
+  
+  bufChopper(arg1);
+  
+});

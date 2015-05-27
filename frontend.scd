@@ -24,7 +24,7 @@ Tdef(\section1, {
       if(sec1Ct % sendInterval == 0, {
 	      numClients.do({|clientIdx|
 	        var bufSelect = 1.5.rand.floor;
-	        b.sendMsg("/radPlayer", ~clients[clientIdx], bufSelect);
+	        b.sendMsg("/bufPlayer", ~clients[clientIdx], bufSelect);
 			});   },{});
 	},{});
 

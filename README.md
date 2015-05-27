@@ -1,5 +1,5 @@
 # socketMusicBoiler
-some boiler plate for socketMusic project using node.js with express and socket.io, webaudioapi, and supercollider.
+some boiler plate for socketMusic project using node.js with express,socket.io and node-osc; webaudioapi; and supercollider.
 
 - server.js - js file run by node
 - package.json - the manifest file for node file

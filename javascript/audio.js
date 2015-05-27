@@ -14,6 +14,9 @@ function init(){
 	}
 	masterInit();
 	sinInit();
+	noiseInit();
+	bufInit();
+	buf2Init();
 
 	}
 

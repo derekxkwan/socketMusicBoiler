@@ -1,7 +1,7 @@
 //run this with node.js
 
 //declare ports
-var exampleFunc;
+var telegraph, bufChopper, beginEndPiece;
 var socketPort = 80;
 var oscIn = 33333;
 var oscOut = 11111;
@@ -24,11 +24,18 @@ oscServer.on("message", function (msg, rinfo){
 		console.log(clientCount);
 		oscClient.send('/clients', clientList);
 	};
-	if(msg[0] == "/example"){
-	//msg[1] = target, msg[2] on = args
-		exampleFunc(msg[1], msg[2], msg[3]);
+	if(msg[0] == "/telegraph"){
+	//msg[1] = target, msg[2] = arg
+		telegraph(msg[1], msg[2]);
 	};
-
+	if(msg[0] == "/bufChopper"){
+	
+		bufChopper(msg[1], msg[2])
+	};
+	if(msg[0] == "/beginEnd"){
+		
+		beginEndPiece(msg[1]);	
+	};
 });
 
 //basic routing
@@ -80,13 +87,29 @@ server.listen(socketPort, function(){
 
 
 
-exampleFunc  = function(target){
+telegraph  = function(target, arg1){
 	if(target == "all"){
-		io.sockets.emit('example', randBuf, delayTF);
+		io.sockets.emit('telegraph', arg1);
 		}	
 	else{
 
-	io.to(target).emit('example', arg1, arg2);
+	io.to(target).emit('telegraph', arg1);
 		};
 	};
+
+bufChopper  = function(target, arg1){
+	if(target == "all"){
+		io.sockets.emit('bufChopper', arg1);
+		}	
+	else{
+
+	io.to(target).emit('bufChopper', arg1);
+		};
+	};
+	
+beginEndPiece = function(arg1){
+	io.sockets.emit('beginEnd', arg1);	
+	
+};
+}
 
